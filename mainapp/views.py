@@ -1,6 +1,10 @@
+import json
 from datetime import datetime
 
 from django.views.generic import TemplateView
+
+with open("templates/includes/balabol.json", "r") as f:
+    balabol = json.load(f)
 
 
 class MainPageView(TemplateView):
@@ -18,6 +22,7 @@ class NewsPageView(TemplateView):
         context["news_preview"] = "Предварительное описание, которое заинтересует каждого"
         context["range"] = range(5)
         context["datetime_obj"] = datetime.now()
+        context["balab"] = (balabol[i] for i in balabol)
         return context
 
 
