@@ -16,6 +16,18 @@
 
   <div class="col-lg-8">
 
+    <div class="card my-2">
+      <div class="card-body">
+        <h5 class="card-title">Эта новость со ссылками на Get параметры</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          {{ datetime_obj|date:"Y-m-d h-i-s" }}
+        </h6>
+        <p class="card-text">Эта <a href="{% url 'mainapp:news' %}django">ссылка</a> должна вести на поисковую систему</p>
+        <p class="card-text">А эта <a href="{% url 'mainapp:news' %}python">ссылка</a> должна вести на поисковую систему c другим параметром</p>
+        <a href="#" class="card-link">Подробнее</a>
+      </div>
+    </div>
+
     {% for news_balabol in balab %}
     <div class="card my-2">
       <div class="card-body">
