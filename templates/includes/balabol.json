@@ -1,0 +1,16 @@
+{
+"0": {"title": "Новость 1",
+"news": "python -django-admin Pythons Django admin interface is a great way to easily create and manage user accounts on a web site. It uses models, forms, templates and other tools tomanage all the user data in your application. This package contains the django-admin module, which provides a commandline interface to django-admin:"},
+
+"1": {"title": "Новость 2",
+"news":"учеба, работа, домашние дела, наконец. И если бы не эта жуткая боль, которую я ощущала, как только мой взгляд падал на его тело, я бы была счастлива. Но эти мысли меня не радовали. Да и чего тут радоваться? Я люблю его. Любила. А сейчас все в прошлом. Сейчас я не знала, что с ним. Он стал чужим человеком. Мне было больно. Было больно и ему. Я знала это, видела это по его глазам. По тому, как он смотрел на меня. В его взгляде была растерянность, боль, отчаяние. Но он улыбался."},
+
+"2": {"title": "Новость 3",
+"news":"blabla <nalioth> sebsebseb: i dont have a clue as to what you mean Seveas nalioth, I cant install the packages on my own box because it is running a 32bit vmware image sebsebseb nalioths: I mean Im in a VM, and I have an unpatched 32 bit kernel, but I want to know if  I could change it to a patched one. krazykit nalioth: you can, but youd have to figure out how to do it.  the vmware-config.pl script probably doesnt handle 32bit kernels jrib Seveas: what are you trying to do?"},
+
+"3": {"title": "Новость 4",
+"news":"django -social-auth .. currentmodule:: django.contrib.auth.models Djangos built-in authentication system can be customized with the :mod:django.contrib.auth module. One of the most popular approaches is to use a third-party authentication provider, such as Facebook or Twitter. If youre interested in extending the built-in authentication system, but dont want to go through the hassle of setting up a third-party provider yourself, you can"},
+
+"4": {"title": "Новость 5",
+"news":"IT IS A TRADITION in the UK that a companys Christmas party is the time for employees to show off their best outfits. Yet no company has ever had so much to be thankful for as Google. Its Christmas celebration this year, on December 20th, was not just about having a good time, but about celebrating a success that is hard to define. The company, founded in 1998 by Larry Page and Sergey Brin, is an online-search engine."}
+}
