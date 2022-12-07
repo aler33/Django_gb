@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "markdownify.apps.MarkdownifyConfig",
     "django_extensions",
     "mainapp",
+    "authapp",
 ]
 
 MIDDLEWARE = [
@@ -65,8 +66,10 @@ TEMPLATES = [
             "context_processors": [
                 "django.template.context_processors.debug",
                 "django.template.context_processors.request",
+                "django.template.context_processors.media",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "mainapp.context_processors.example.simple_context_processor",
             ],
         },
     },
@@ -104,6 +107,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = "authapp.CustomUser"
+LOGIN_REDIRECT_URL = "mainapp:main_page"
+LOGOUT_REDIRECT_URL = "mainapp:main_page"
+MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
