@@ -70,7 +70,7 @@ TEMPLATES = [
                 "django.template.context_processors.media",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                # "mainapp.context_processors.example.simple_context_processor",
+                "mainapp.context_processors.example.simple_context_processor",
                 "social_django.context_processors.backends",
                 "social_django.context_processors.login_redirect",
             ],
@@ -153,7 +153,11 @@ MEDIA_ROOT = BASE_DIR / "media"
 AUTHENTICATION_BACKENDS = (
     "social_core.backends.github.GithubOAuth2",
     "django.contrib.auth.backends.ModelBackend",
+    "social_core.backends.vk.VKOAuth2",
 )
 
 SOCIAL_AUTH_GITHUB_KEY = "6f447c84ce37e9d7228b"
 SOCIAL_AUTH_GITHUB_SECRET = "423c46058d80a519649ad982e93ee451d4f1a2a1"
+SOCIAL_AUTH_VK_OAUTH2_KEY = "51498616"
+SOCIAL_AUTH_VK_OAUTH2_SECRET = "VfLizk0aH7uA8skR1fYd"
+SOCIAL_AUTH_VK_OAUTH2_API_VERSION = "5.131"
