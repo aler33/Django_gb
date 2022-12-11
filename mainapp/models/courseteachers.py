@@ -1,6 +1,7 @@
 __all__ = ["CourseTeachers"]
 
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 from mainapp.models.courses import Courses
 
@@ -18,3 +19,7 @@ class CourseTeachers(models.Model):
     def delete(self, *args):
         self.deleted = True
         self.save()
+
+    class Meta:
+        verbose_name = _("Teacher")
+        verbose_name_plural = _("Teachers")
