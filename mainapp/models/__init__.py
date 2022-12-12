@@ -1,4 +1,5 @@
-from .courses import Courses
+from .coursefeedback import *
+from .courses import *
 from .courseteachers import CourseTeachers
 from .lesson import Lesson
 from .news import News
