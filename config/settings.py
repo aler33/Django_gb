@@ -223,7 +223,7 @@ CELERY_RESULT_BACKEND = "redis://localhost:6379"
 # EMAIL_PORT = "25"
 
 # For debugging: python -m smtpd -n -c DebuggingServer localhost:25
-# EMAIL_HOST_USER = "django@geekshop.local"
+# EMAIL_HOST_USER = "aler32@mail.local"
 # EMAIL_HOST_PASSWORD = "geekshop"
 # EMAIL_USE_SSL = False
 # If server support TLS:
