@@ -27,7 +27,7 @@ urlpatterns = [
     ),
     path(
         "courses/",
-        cache_page(60 * 5)(views.CoursesListView.as_view()),  # 5 minutes
+        cache_page(10 * 1)(views.CoursesListView.as_view()),  # 5 minutes
         name="courses",
     ),
     path(
