@@ -56,12 +56,13 @@ class NewsDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = ("mainapp.delete_news",)
 
 
-class CoursesListView(TemplateView):
-    template_name = "mainapp/courses_list.html"
+class CoursesListView(ListView):
+    model = mainapp_models.Courses
+    paginate_by = 6
 
     def get_context_data(self, **kwargs):
         context = super(CoursesListView, self).get_context_data(**kwargs)
-        context["objects"] = mainapp_models.Courses.objects.all()[:7]
+        context["objects"] = mainapp_models.Courses.objects.all()
         return context
 
 
@@ -69,7 +70,7 @@ class CoursesDetailView(TemplateView):
     template_name = "mainapp/courses_detail.html"
 
     def get_context_data(self, pk=None, **kwargs):
-        logger.debug("Another log message")
+        logger.debug("Yet another log message")
         context = super(CoursesDetailView, self).get_context_data(**kwargs)
         context["course_object"] = get_object_or_404(mainapp_models.Courses, pk=pk)
         context["lessons"] = mainapp_models.Lesson.objects.filter(course=context["course_object"])
@@ -81,6 +82,7 @@ class CoursesDetailView(TemplateView):
                 context["feedback_form"] = mainapp_forms.CourseFeedbackForm(
                     course=context["course_object"], user=self.request.user
                 )
+
         cached_feedback = cache.get(f"feedback_list_{pk}")
         if not cached_feedback:
             context["feedback_list"] = (
@@ -89,6 +91,14 @@ class CoursesDetailView(TemplateView):
                 .select_related()
             )
             cache.set(f"feedback_list_{pk}", context["feedback_list"], timeout=300)  # 5 minutes
+
+            # Archive object for tests --->
+            import pickle
+
+            with open(f"mainapp/fixtures/006_feedback_list_{pk}.bin", "wb") as outf:
+                pickle.dump(context["feedback_list"], outf)
+            # <--- Archive object for tests
+
         else:
             context["feedback_list"] = cached_feedback
 
